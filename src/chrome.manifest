@@ -1,0 +1,2 @@
+content open-ecard-oldact chrome/content/
+overlay chrome://browser/content/browser.xul chrome://open-ecard-oldact/content/activate.xul
