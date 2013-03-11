@@ -6,7 +6,7 @@
     <Description rdf:about="urn:mozilla:install-manifest">
 	<em:id>oldact@openecard.org</em:id>
 
-	<em:name>Open eCard old object activation wrapper</em:name>
+	<em:name>Open eCard Legacy Activator</em:name>
 	<em:version>1.0.0</em:version>
 	<em:type>2</em:type>
 	<em:creator>Open eCard Team</em:creator>
@@ -14,12 +14,14 @@
 
 	<em:description>Scans for eCard object tags and invokes the localhost activation when one is encountered.</em:description>
 	<em:homepageURL>http://www.openecard.org/</em:homepageURL>
+	<em:iconURL>chrome://open-ecard-oldact/content/Open-eCard-Logo_48.png</em:iconURL>
+	<em:icon64URL>chrome://open-ecard-oldact/content/Open-eCard-Logo_64.png</em:icon64URL>
 
 	<em:targetApplication>
 	    <Description>
 		<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
 		<em:minVersion>11.0</em:minVersion>
-		<em:maxVersion>22.0</em:maxVersion>
+		<em:maxVersion>20.0</em:maxVersion>
 	    </Description>
 	</em:targetApplication>
     </Description>
