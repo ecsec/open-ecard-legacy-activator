@@ -19,7 +19,7 @@ available shortly.
 Installation
 ============
 
-The repository comes with a build script, build.sh. On execution it creates a xpi file in the build directory, which can
+The repository comes with a build script, build.sh for *nix or build.bat for windows. On execution it creates a xpi file in the build directory, which can
 be installed in Firefox.
 
 
