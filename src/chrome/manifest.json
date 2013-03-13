@@ -1,6 +1,6 @@
 {
     "name": "Open eCard Legacy Activator",
-    "version": "1.0",
+    "version": "1.0.0",
     "permissions": [
 	"tabs", "http://*/*", "https://*/*"
     ],

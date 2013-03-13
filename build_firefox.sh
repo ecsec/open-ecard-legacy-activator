@@ -2,4 +2,4 @@
 
 mkdir -p build
 cd src/firefox
-zip -r ../build/oldact.xpi *
+zip -r ../../build/oldact.xpi *
