@@ -1,5 +1,5 @@
 #!/bin/sh
 
 mkdir -p build
-cd src
+cd src/firefox
 zip -r ../build/oldact.xpi *

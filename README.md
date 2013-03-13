@@ -1,8 +1,8 @@
-Open eCard oldact Firefox Addon
-===============================
+Open eCard oldact Firefox Addon and Chrome Extension
+====================================================
 
-This Firefox addon is a temporary solution to address the missing support for the new eID activation as specified in
-TR-03112 Part 7. It's solution is to watch the browser content for object tags with type 'application/vnd.ecard-client'
+This Firefox addon and Chrome extension are a temporary solution to address the missing support for the new eID activation as specified in
+TR-03112 Part 7. Their solution is to watch the browser content for object tags with type 'application/vnd.ecard-client'
 and forwards the object to the Open eCard localhost server.
 
 This mechanism is not specified in TR-03112 and differs to it in the following aspects:
@@ -19,8 +19,8 @@ available shortly.
 Installation
 ============
 
-The repository comes with a build script, build.sh for *nix or build.bat for windows. On execution it creates a xpi file in the build directory, which can
-be installed in Firefox.
+The repository comes with a build script for each browser and OS, for example build_firefox.sh for Firefox on *nix and build_chrome.bat for Chrome on windows.
+On execution it creates the addon/extension file in the build directory, which can be installed in the browser afterwards.
 
 
 License
