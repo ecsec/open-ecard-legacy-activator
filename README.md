@@ -1,7 +1,7 @@
-Open eCard oldact Firefox Addon and Chrome Extension
-====================================================
+Open eCard oldact Browser Addons/Extensions
+===========================================
 
-This Firefox addon and Chrome extension are a temporary solution to address the missing support for the new eID activation as specified in
+These Browser Addons/Extensions are a temporary solution to address the missing support for the new eID activation as specified in
 TR-03112 Part 7. Their solution is to watch the browser content for object tags with type 'application/vnd.ecard-client'
 and forwards the object to the Open eCard localhost server.
 
@@ -26,4 +26,4 @@ On execution it creates the addon/extension file in the build directory, which c
 License
 =======
 
-The source code for this addon is released under the GPLv3.
+The source code for the addons/extensions is released under the GPLv3.
