@@ -1,0 +1,13 @@
+There're two ways building the Open eCard Legacy Activator safari extension:
+
+
+1. Using the Extension Builder provided by Apple
+
+http://developer.apple.com/library/safari/#documentation/Tools/Conceptual/SafariExtensionGuide/UsingExtensionBuilder/UsingExtensionBuilder.html
+
+
+2. Building from command line
+
+There's a useful blog post describing the build & signing process:
+
+http://blog.streak.com/2013/01/how-to-build-safari-extension.html
