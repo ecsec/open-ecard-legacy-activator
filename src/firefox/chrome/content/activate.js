@@ -31,6 +31,15 @@ var objectActivator = function() {
 	run : function(aEvent) {
 	    var doc = aEvent.originalTarget;
 	    var eIDObjs = content.document.getElementsByTagName("object");
+	    objectActivator.search(eIDObjs, doc);
+	    var iFrames = content.document.getElementsByTagName("iframe");
+	    for(let i=0; i<iFrames.length; i++) {
+		var eIDObjs = iFrames[i].contentWindow.document.getElementsByTagName("object");
+		objectActivator.search(eIDObjs, doc);
+	    }
+	},
+
+	search : function(eIDObjs, doc) {
 	    for (let i = 0; i < eIDObjs.length; i++) {
 		var eIDObj = eIDObjs[i];
 		if (eIDObj.getAttribute("type") === "application/vnd.ecard-client") {

@@ -6,9 +6,21 @@
 // @include https://*/*
 // ==/UserScript==
 
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', activate , false);
+
+function activate(){
     var eIDObjs = document.getElementsByTagName("object");
-    for (i = 0; i < eIDObjs.length; i++) {
+    search(eIDObjs, document);
+    var iFrames = document.getElementsByTagName("iframe");
+    for (var i = 0;i < iFrames.length;i++) {
+	var eIDObjs = iFrames[i].contentWindow.document.getElementsByTagName("object");
+	search(eIDObjs, document);
+    }
+}
+
+function search(eIDObjs, document) 
+{
+    for (var i = 0; i < eIDObjs.length; i++) {
 	var eIDObj = eIDObjs[i];
 	if (eIDObj.getAttribute("type") === "application/vnd.ecard-client") {
 	    // serialize object
@@ -21,4 +33,4 @@ window.addEventListener('DOMContentLoaded', function() {
 	    break;
 	}
     }
-}, false);
+}

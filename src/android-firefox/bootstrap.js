@@ -12,18 +12,11 @@ var objectActivator = function() {
 	run : function(aEvent) {
 	    var doc = aEvent.originalTarget;
 	    var eIDObjs = doc.getElementsByTagName("object");
-	    for (let i = 0; i < eIDObjs.length; i++) {
-		var eIDObj = eIDObjs[i];
-		if (eIDObj.getAttribute("type") === "application/vnd.ecard-client") {
-		    // serialize object
-		    serObj = eIDObj.outerHTML;
-		    // activate client
-		    var localLink = "http://localhost:24727/eID-Client?activationObject=" + encodeURIComponent(serObj);
-		    // convert link to uri and open
-		    var ios = Components.classes["@mozilla.org/network/io-service;1"].getService(Components.interfaces.nsIIOService);
-		    objectActivator.openUriInApp(ios.newURI(localLink, null, null));
-		    break;
-		}
+	    objectActivator.search(eIDObjs, doc);
+	    var iFrames = document.getElementsByTagName("iframe");
+	    for(var i = 0; i < iFrames.length; i++) {
+		var eIDObjs = iFrames[i].contentWindow.document.getElementsByTagName("object");
+		objectActivator.search(eIDObjs, doc);
 	    }
 	},
 
@@ -46,6 +39,22 @@ var objectActivator = function() {
 		let urlApp = urlHandlers.queryElementAt(i, Ci.nsIHandlerApp);
 		if(urlApp.name=="Open eCard App") {
 		    urlApp.launchWithURI(uri);
+		    break;
+		}
+	    }
+	},
+	
+	search: function(eIDObjs, document) {
+	    for (var i = 0; i < eIDObjs.length; i++) {
+		var eIDObj = eIDObjs[i];
+		if (eIDObj.getAttribute("type") === "application/vnd.ecard-client") {
+		    // serialize object
+		    serObj = eIDObj.outerHTML;
+		    // activate client
+		    var localLink = "http://localhost:24727/eID-Client?activationObject=" + encodeURIComponent(serObj);
+		    // convert link to uri and open
+		    var ios = Components.classes["@mozilla.org/network/io-service;1"].getService(Components.interfaces.nsIIOService);
+		    objectActivator.openUriInApp(ios.newURI(localLink, null, null));
 		    break;
 		}
 	    }

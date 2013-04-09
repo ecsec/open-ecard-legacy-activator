@@ -16,10 +16,18 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  ****************************************************************************/
 
-function activate()
-{
+function activate() {
     var eIDObjs = document.getElementsByTagName("object");
-    for (i = 0; i < eIDObjs.length; i++) {
+    search(eIDObjs, document);
+    var iFrames = document.getElementsByTagName("iframe");
+    for (var i = 0; i < iFrames.length; i++) {
+	var eIDObjs = iFrames[i].contentWindow.document.getElementsByTagName("object");
+	search(eIDObjs, document);
+    }
+}
+
+function search(eIDObjs, document) {
+    for (var i = 0; i < eIDObjs.length; i++) {
 	var eIDObj = eIDObjs[i];
 	if (eIDObj.getAttribute("type") === "application/vnd.ecard-client") {
 	    // serialize object
@@ -32,5 +40,7 @@ function activate()
 	    break;
 	}
     }
+    console.log("No object tag found");
 }
+
 activate();
