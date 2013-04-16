@@ -17,21 +17,9 @@
  ****************************************************************************/
 
 function activate() {
-    // get directly accessible object tags
+    // get all object tags including all (i)frames
     var eIDObjs = document.getElementsByTagName("object");
     search(eIDObjs, document);
-    // get object tags inside iframes
-    var iFrames = document.getElementsByTagName("iframe");
-    for (var i = 0; i < iFrames.length; i++) {
-	var eIDObjs = iFrames[i].contentWindow.document.getElementsByTagName("object");
-	search(eIDObjs, document);
-    }
-    // get object tags inside normal frames
-    var frames = document.getElementsByTagName("frame");
-    for (var i = 0; i < frames.length; i++) {
-	var eIDObjs = frames[i].contentWindow.document.getElementsByTagName("object");
-	search(eIDObjs, document);
-    }
 }
 
 function search(eIDObjs, document) {
