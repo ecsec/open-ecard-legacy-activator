@@ -7,7 +7,7 @@
 	<em:id>oldact@openecard.org</em:id>
 
 	<em:name>Open eCard Legacy Activator</em:name>
-	<em:version>1.0.0</em:version>
+	<em:version>1.0.1</em:version>
 	<em:type>2</em:type>
 	<em:bootstrap>true</em:bootstrap>
 	<em:creator>Open eCard Team</em:creator>

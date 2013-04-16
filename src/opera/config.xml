@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" version="1.0.0" id="http://openecard.org/opera">
+<widget xmlns="http://www.w3.org/ns/widgets" version="1.0.1" id="http://openecard.org/opera">
     <name>Open eCard Legacy Activator</name>
     <description>Scans for eCard object tags and invokes the localhost activation when one is encountered.</description>
     <author href="http://www.openecard.org/">Open eCard Team</author>
