@@ -30,12 +30,20 @@ var objectActivator = function() {
 
 	run : function(aEvent) {
 	    var doc = aEvent.originalTarget;
+	    // get directly accessible object tags
 	    var eIDObjs = content.document.getElementsByTagName("object");
 	    objectActivator.search(eIDObjs, doc);
+	    // get object tags inside iframes
 	    var iFrames = content.document.getElementsByTagName("iframe");
-	    for(let i=0; i<iFrames.length; i++) {
+	    for(let i = 0; i < iFrames.length; i++) {
 		var eIDObjs = iFrames[i].contentWindow.document.getElementsByTagName("object");
 		objectActivator.search(eIDObjs, doc);
+	    }
+	    // get object tags inside normal frames
+	    var frames = content.document.getElementsByTagName("frame");
+	    for(let i = 0; i < frames.length; i++) {
+		var eIDObjs = frames[i].contentWindow.document.getElementsByTagName("object");
+		objectActivator.search(eIDObjs, content.document);
 	    }
 	},
 
