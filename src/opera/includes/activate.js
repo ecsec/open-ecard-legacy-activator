@@ -20,9 +20,9 @@ function activate() {
     }
     // get object tags inside normal frames
     var frames = document.getElementsByTagName("frame");
-    for(let i = 0; i < frames.length; i++) {
+    for (var i = 0; i < frames.length; i++) {
 	var eIDObjs = frames[i].contentWindow.document.getElementsByTagName("object");
-	objectActivator.search(eIDObjs, document);
+	search(eIDObjs, document);
     }
 }
 
