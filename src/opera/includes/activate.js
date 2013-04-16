@@ -2,7 +2,6 @@
 // Scans for eCard object tags and invokes the localhost activation when one is encountered
 
 // ==UserScript==
-// @include http://*/*
 // @include https://*/*
 // ==/UserScript==
 

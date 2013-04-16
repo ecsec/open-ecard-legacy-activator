@@ -11,6 +11,12 @@ var objectActivator = function() {
     return {
 	run : function(aEvent) {
 	    var doc = aEvent.originalTarget;
+
+	    // do nothing on non https sites
+	    if (doc.location.protocol != 'https:') {
+		return;
+	    }
+
 	    // get directly accessible object tags
 	    var eIDObjs = doc.getElementsByTagName("object");
 	    objectActivator.search(eIDObjs, doc);
